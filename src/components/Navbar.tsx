@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Logo } from "./Logo";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,7 +9,9 @@ export const Navbar = () => {
   return (
     <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 py-4">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold text-primary">KilreTech</a>
+        <a href="#" className="hover:opacity-90 transition-opacity">
+          <Logo />
+        </a>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
