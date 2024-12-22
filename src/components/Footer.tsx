@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">AppStudio</h3>
+            <h3 className="text-2xl font-bold mb-4">KilreTech</h3>
             <p className="text-gray-400">
               Transformando ideias em realidade através da tecnologia.
             </p>
@@ -48,7 +48,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 AppStudio. Todos os direitos reservados.</p>
+          <p>&copy; 2024 KilreTech. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

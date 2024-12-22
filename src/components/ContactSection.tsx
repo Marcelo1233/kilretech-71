@@ -18,7 +18,7 @@ export const ContactSection = () => {
                 <Mail className="w-6 h-6 text-primary" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-gray-600">contato@appstudio.com.br</p>
+                  <p className="text-gray-600">contato@kilretech.com.br</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
