@@ -25,17 +25,17 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#4F46E5",
-          hover: "#4338CA",
+          DEFAULT: "#403E43",
+          hover: "#221F26",
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#6B7280",
+          DEFAULT: "#9b87f5",
           foreground: "#ffffff",
         },
         accent: {
-          DEFAULT: "#8B5CF6",
-          foreground: "#ffffff",
+          DEFAULT: "#E5DEFF",
+          foreground: "#403E43",
         },
       },
       fontFamily: {
