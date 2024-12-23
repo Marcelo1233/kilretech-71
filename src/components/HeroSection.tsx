@@ -14,6 +14,16 @@ export const HeroSection = () => {
     });
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-gray-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
       <div className="container mx-auto px-4">
@@ -32,6 +42,7 @@ export const HeroSection = () => {
               <Button 
                 size={isMobile ? "default" : "lg"} 
                 className="group bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300"
+                onClick={() => scrollToSection('contact')}
               >
                 Iniciar Projeto
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -40,6 +51,7 @@ export const HeroSection = () => {
                 size={isMobile ? "default" : "lg"} 
                 variant="outline"
                 className="border-2 hover:bg-gray-50 dark:hover:bg-gray-800"
+                onClick={() => scrollToSection('portfolio')}
               >
                 Ver Portfolio
               </Button>
