@@ -32,19 +32,12 @@ export const HeroSection = () => {
             <p className="text-base md:text-lg text-gray-600">
               Desenvolvemos aplicativos mobile e web que impulsionam seu negócio para o futuro.
             </p>
-            <div className="bg-primary/10 p-4 rounded-lg border border-primary/20">
-              <p className="text-primary font-semibold text-sm md:text-base">
-                ⏱️ Prazo de Entrega: 120 dias
-              </p>
-              <p className="text-xs md:text-sm text-gray-600 mt-1">
-                Garantimos a entrega do seu projeto em até 120 dias, com qualidade e excelência.
-              </p>
-            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button size={isMobile ? "default" : "lg"} className="w-full sm:w-auto">Começar Projeto</Button>
               <Button size={isMobile ? "default" : "lg"} variant="outline" className="w-full sm:w-auto">Ver Portfolio</Button>
             </div>
           </div>
+
           <div className="relative h-[300px] md:h-[450px] flex items-center justify-center animate-fade-up">
             <TooltipProvider>
               {/* Nuvem 1 - Apps Mobile */}
