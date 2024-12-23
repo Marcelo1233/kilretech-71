@@ -43,18 +43,18 @@ export const HeroSection = () => {
               <Button size="lg" variant="outline">Ver Portfolio</Button>
             </div>
           </div>
-          <div className="relative h-[400px] flex items-center justify-center animate-fade-up">
+          <div className="relative h-[500px] flex items-center justify-center animate-fade-up">
             <TooltipProvider>
-              {/* Bolha 1 - Apps Mobile */}
+              {/* Nuvem 1 - Apps Mobile */}
               <Draggable>
                 <div>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div 
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-float-1 cursor-move"
+                        className="absolute top-20 left-20 animate-float-1 cursor-move"
                         onClick={() => handleCircleClick("Apps Mobile")}
                       >
-                        <div className="p-6 bg-[#D3E4FD] backdrop-blur-sm rounded-[30px] shadow-lg w-36 h-36 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 border-2 border-white/50">
+                        <div className="p-6 bg-[#D3E4FD] backdrop-blur-sm rounded-[40px] shadow-lg w-40 h-36 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 border-2 border-white/50" style={{ borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' }}>
                           <Smartphone className="w-8 h-8 text-primary mb-2" />
                           <h3 className="font-semibold text-sm text-center">Apps Mobile</h3>
                           <p className="text-xs text-gray-600 mt-1">IOS e Android</p>
@@ -68,16 +68,16 @@ export const HeroSection = () => {
                 </div>
               </Draggable>
 
-              {/* Bolha 2 - Performance */}
+              {/* Nuvem 2 - Performance */}
               <Draggable>
                 <div>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div 
-                        className="absolute top-1/4 left-1/2 -translate-x-1/2 animate-float-2 cursor-move"
+                        className="absolute top-40 right-20 animate-float-2 cursor-move"
                         onClick={() => handleCircleClick("Performance Otimizada")}
                       >
-                        <div className="p-6 bg-[#FDE1D3] backdrop-blur-sm rounded-[30px] shadow-lg w-36 h-36 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 border-2 border-white/50">
+                        <div className="p-6 bg-[#FDE1D3] backdrop-blur-sm rounded-[40px] shadow-lg w-40 h-36 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 border-2 border-white/50" style={{ borderRadius: '60% 40% 30% 70% / 50% 40% 60% 50%' }}>
                           <Zap className="w-8 h-8 text-primary mb-2" />
                           <h3 className="font-semibold text-sm text-center">Performance</h3>
                           <p className="text-xs text-gray-600 mt-1">Alta velocidade</p>
@@ -91,16 +91,16 @@ export const HeroSection = () => {
                 </div>
               </Draggable>
 
-              {/* Bolha 3 - Web */}
+              {/* Nuvem 3 - Web */}
               <Draggable>
                 <div>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div 
-                        className="absolute bottom-1/4 left-1/2 -translate-x-1/2 animate-float-3 cursor-move"
+                        className="absolute bottom-20 left-1/2 -translate-x-1/2 animate-float-3 cursor-move"
                         onClick={() => handleCircleClick("Desenvolvimento Web")}
                       >
-                        <div className="p-6 bg-[#E5DEFF] backdrop-blur-sm rounded-[30px] shadow-lg w-36 h-36 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 border-2 border-white/50">
+                        <div className="p-6 bg-[#E5DEFF] backdrop-blur-sm rounded-[40px] shadow-lg w-40 h-36 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 border-2 border-white/50" style={{ borderRadius: '50% 50% 70% 30% / 50% 50% 40% 60%' }}>
                           <Code className="w-8 h-8 text-accent mb-2" />
                           <h3 className="font-semibold text-sm text-center">Web</h3>
                           <p className="text-xs text-gray-600 mt-1">Sites modernos</p>
