@@ -51,13 +51,14 @@ export const HeroSection = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div 
-                        className="absolute top-20 left-32 animate-float-1 cursor-move"
+                        className="absolute top-24 left-24 animate-float-1 cursor-move"
                         onClick={() => handleCircleClick("Apps Mobile")}
                       >
-                        <div className="p-6 bg-[#D3E4FD]/80 backdrop-blur-sm shadow-lg w-44 h-36 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 border-2 border-white/50" 
+                        <div className="p-6 bg-[#D3E4FD]/90 backdrop-blur-sm shadow-lg w-48 h-40 flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300" 
                              style={{ 
-                               borderRadius: '60% 40% 65% 35% / 40% 45% 55% 60%',
-                               boxShadow: '0 8px 32px -4px rgba(0,0,0,0.1)',
+                               borderRadius: '70% 30% 65% 35% / 60% 45% 55% 40%',
+                               boxShadow: '8px 8px 24px -8px rgba(0,0,0,0.15), -8px -8px 24px -8px rgba(255,255,255,0.8)',
+                               border: '2px solid rgba(255,255,255,0.8)',
                              }}>
                           <Smartphone className="w-8 h-8 text-primary mb-2" />
                           <h3 className="font-semibold text-sm text-center">Apps Mobile</h3>
@@ -78,13 +79,14 @@ export const HeroSection = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div 
-                        className="absolute top-40 right-32 animate-float-2 cursor-move"
+                        className="absolute top-36 right-24 animate-float-2 cursor-move"
                         onClick={() => handleCircleClick("Performance Otimizada")}
                       >
-                        <div className="p-6 bg-[#FDE1D3]/80 backdrop-blur-sm shadow-lg w-44 h-36 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 border-2 border-white/50" 
+                        <div className="p-6 bg-[#FDE1D3]/90 backdrop-blur-sm shadow-lg w-48 h-40 flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300" 
                              style={{ 
-                               borderRadius: '45% 55% 40% 60% / 55% 45% 55% 45%',
-                               boxShadow: '0 8px 32px -4px rgba(0,0,0,0.1)',
+                               borderRadius: '35% 65% 30% 70% / 55% 45% 65% 45%',
+                               boxShadow: '8px 8px 24px -8px rgba(0,0,0,0.15), -8px -8px 24px -8px rgba(255,255,255,0.8)',
+                               border: '2px solid rgba(255,255,255,0.8)',
                              }}>
                           <Zap className="w-8 h-8 text-primary mb-2" />
                           <h3 className="font-semibold text-sm text-center">Performance</h3>
@@ -105,13 +107,14 @@ export const HeroSection = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div 
-                        className="absolute bottom-32 left-1/2 -translate-x-1/2 animate-float-3 cursor-move"
+                        className="absolute bottom-24 left-1/2 -translate-x-1/2 animate-float-3 cursor-move"
                         onClick={() => handleCircleClick("Desenvolvimento Web")}
                       >
-                        <div className="p-6 bg-[#E5DEFF]/80 backdrop-blur-sm shadow-lg w-44 h-36 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 border-2 border-white/50" 
+                        <div className="p-6 bg-[#E5DEFF]/90 backdrop-blur-sm shadow-lg w-48 h-40 flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300" 
                              style={{ 
-                               borderRadius: '55% 45% 50% 50% / 45% 55% 45% 55%',
-                               boxShadow: '0 8px 32px -4px rgba(0,0,0,0.1)',
+                               borderRadius: '65% 35% 60% 40% / 45% 65% 35% 55%',
+                               boxShadow: '8px 8px 24px -8px rgba(0,0,0,0.15), -8px -8px 24px -8px rgba(255,255,255,0.8)',
+                               border: '2px solid rgba(255,255,255,0.8)',
                              }}>
                           <Code className="w-8 h-8 text-accent mb-2" />
                           <h3 className="font-semibold text-sm text-center">Web</h3>
