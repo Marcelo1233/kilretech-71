@@ -1,7 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Smartphone, Code, Zap } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { useToast } from "@/components/ui/use-toast";
 
 export const HeroSection = () => {
+  const { toast } = useToast();
+
+  const handleCircleClick = (service: string) => {
+    toast({
+      title: `Serviço: ${service}`,
+      description: "Entre em contato conosco para saber mais sobre este serviço!",
+    });
+  };
+
   return (
     <div className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-primary/5 to-accent/5">
       <div className="container mx-auto px-4">
@@ -19,31 +35,62 @@ export const HeroSection = () => {
             </div>
           </div>
           <div className="relative h-[400px] animate-fade-up">
-            {/* Círculos flutuantes */}
             <div className="absolute inset-0">
-              {/* Círculo 1 - Apps Mobile */}
-              <div className="absolute top-1/4 left-1/4 animate-float-1">
-                <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
-                  <Smartphone className="w-8 h-8 text-primary mb-2" />
-                  <h3 className="font-semibold text-sm text-center">Apps Mobile</h3>
-                </div>
-              </div>
+              <TooltipProvider>
+                {/* Círculo 1 - Apps Mobile */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div 
+                      className="absolute top-1/4 left-1/4 animate-float-1 cursor-pointer"
+                      onClick={() => handleCircleClick("Apps Mobile")}
+                    >
+                      <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
+                        <Smartphone className="w-8 h-8 text-primary mb-2" />
+                        <h3 className="font-semibold text-sm text-center">Apps Mobile</h3>
+                      </div>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Desenvolvimento de aplicativos iOS e Android</p>
+                  </TooltipContent>
+                </Tooltip>
 
-              {/* Círculo 2 - Performance Otimizada */}
-              <div className="absolute top-1/2 right-1/4 animate-float-2">
-                <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
-                  <Zap className="w-8 h-8 text-primary mb-2" />
-                  <h3 className="font-semibold text-sm text-center">Performance Otimizada</h3>
-                </div>
-              </div>
+                {/* Círculo 2 - Performance Otimizada */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div 
+                      className="absolute top-1/2 right-1/4 animate-float-2 cursor-pointer"
+                      onClick={() => handleCircleClick("Performance Otimizada")}
+                    >
+                      <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
+                        <Zap className="w-8 h-8 text-primary mb-2" />
+                        <h3 className="font-semibold text-sm text-center">Performance Otimizada</h3>
+                      </div>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Aplicações rápidas e responsivas</p>
+                  </TooltipContent>
+                </Tooltip>
 
-              {/* Círculo 3 - Desenvolvimento Web */}
-              <div className="absolute bottom-1/4 left-1/3 animate-float-3">
-                <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
-                  <Code className="w-8 h-8 text-accent mb-2" />
-                  <h3 className="font-semibold text-sm text-center">Desenvolvimento Web</h3>
-                </div>
-              </div>
+                {/* Círculo 3 - Desenvolvimento Web */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div 
+                      className="absolute bottom-1/4 left-1/3 animate-float-3 cursor-pointer"
+                      onClick={() => handleCircleClick("Desenvolvimento Web")}
+                    >
+                      <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
+                        <Code className="w-8 h-8 text-accent mb-2" />
+                        <h3 className="font-semibold text-sm text-center">Desenvolvimento Web</h3>
+                      </div>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Sites e aplicações web modernas</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </div>
           </div>
         </div>
