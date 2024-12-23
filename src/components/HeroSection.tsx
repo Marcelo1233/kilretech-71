@@ -15,73 +15,74 @@ export const HeroSection = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-gray-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 text-center md:text-left animate-fade-up">
+          <div className="space-y-6 text-center md:text-left">
             <h1 className="text-3xl md:text-6xl font-bold leading-tight">
-              Transformando Ideias em{" "}
-              <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-                Aplicativos Incríveis
+              Transforme seu Negócio com{" "}
+              <span className="bg-gradient-to-r from-primary via-accent to-purple-600 bg-clip-text text-transparent">
+                Soluções Digitais
               </span>
             </h1>
             <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-xl">
-              Desenvolvemos aplicativos mobile e web que impulsionam seu negócio para o futuro.
+              Desenvolvemos soluções tecnológicas que impulsionam seu crescimento e destacam sua empresa no mercado digital.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button 
                 size={isMobile ? "default" : "lg"} 
-                className="group"
+                className="group bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300"
               >
-                Começar Projeto
+                Iniciar Projeto
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
                 size={isMobile ? "default" : "lg"} 
                 variant="outline"
+                className="border-2 hover:bg-gray-50 dark:hover:bg-gray-800"
               >
                 Ver Portfolio
               </Button>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 md:gap-6 animate-fade-up">
+          <div className="grid grid-cols-2 gap-4 md:gap-6">
             <div 
-              className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-gray-100 dark:border-gray-700"
               onClick={() => handleServiceClick("Apps Mobile")}
             >
               <div className="h-full flex flex-col items-center justify-center space-y-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
+                <div className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg">
                   <Smartphone className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="font-semibold text-lg">Apps Mobile</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">iOS e Android</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Experiências móveis excepcionais</p>
               </div>
             </div>
 
             <div 
-              className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-gray-100 dark:border-gray-700"
               onClick={() => handleServiceClick("Performance Otimizada")}
             >
               <div className="h-full flex flex-col items-center justify-center space-y-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
+                <div className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg">
                   <Zap className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="font-semibold text-lg">Performance</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Alta velocidade</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Velocidade e eficiência</p>
               </div>
             </div>
 
             <div 
-              className="col-span-2 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className="col-span-2 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-gray-100 dark:border-gray-700"
               onClick={() => handleServiceClick("Desenvolvimento Web")}
             >
               <div className="h-full flex flex-col items-center justify-center space-y-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
+                <div className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg">
                   <Code className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="font-semibold text-lg">Desenvolvimento Web</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Sites modernos e responsivos</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Websites modernos e responsivos</p>
               </div>
             </div>
           </div>
