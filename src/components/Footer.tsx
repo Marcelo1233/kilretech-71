@@ -2,18 +2,18 @@ import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 text-white py-8 md:py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">KilreTech</h3>
-            <p className="text-gray-400">
+            <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">KilreTech</h3>
+            <p className="text-sm md:text-base text-gray-400">
               Transformando ideias em realidade através da tecnologia.
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Serviços</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-sm md:text-base font-semibold mb-3 md:mb-4">Serviços</h4>
+            <ul className="space-y-2 text-sm md:text-base text-gray-400">
               <li>Desenvolvimento Mobile</li>
               <li>Desenvolvimento Web</li>
               <li>UI/UX Design</li>
@@ -21,8 +21,8 @@ export const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Links Úteis</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-sm md:text-base font-semibold mb-3 md:mb-4">Links Úteis</h4>
+            <ul className="space-y-2 text-sm md:text-base text-gray-400">
               <li>Sobre Nós</li>
               <li>Portfolio</li>
               <li>Blog</li>
@@ -30,25 +30,25 @@ export const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Redes Sociais</h4>
+            <h4 className="text-sm md:text-base font-semibold mb-3 md:mb-4">Redes Sociais</h4>
             <div className="flex gap-4">
               <a href="#" className="hover:text-primary transition-colors">
-                <Facebook size={24} />
+                <Facebook size={20} className="md:w-6 md:h-6" />
               </a>
               <a href="#" className="hover:text-primary transition-colors">
-                <Instagram size={24} />
+                <Instagram size={20} className="md:w-6 md:h-6" />
               </a>
               <a href="#" className="hover:text-primary transition-colors">
-                <Twitter size={24} />
+                <Twitter size={20} className="md:w-6 md:h-6" />
               </a>
               <a href="#" className="hover:text-primary transition-colors">
-                <Linkedin size={24} />
+                <Linkedin size={20} className="md:w-6 md:h-6" />
               </a>
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 KilreTech. Todos os direitos reservados.</p>
+        <div className="border-t border-gray-800 mt-8 md:mt-12 pt-6 md:pt-8 text-center">
+          <p className="text-sm md:text-base text-gray-400">&copy; 2024 KilreTech. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
