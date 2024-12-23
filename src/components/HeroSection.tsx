@@ -30,6 +30,14 @@ export const HeroSection = () => {
             <p className="text-lg text-gray-600">
               Desenvolvemos aplicativos mobile e web que impulsionam seu negócio para o futuro.
             </p>
+            <div className="bg-primary/10 p-4 rounded-lg border border-primary/20">
+              <p className="text-primary font-semibold">
+                ⏱️ Prazo de Entrega: 120 dias
+              </p>
+              <p className="text-sm text-gray-600 mt-1">
+                Garantimos a entrega do seu projeto em até 120 dias, com qualidade e excelência.
+              </p>
+            </div>
             <div className="flex gap-4">
               <Button size="lg">Começar Projeto</Button>
               <Button size="lg" variant="outline">Ver Portfolio</Button>
