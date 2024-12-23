@@ -4,30 +4,36 @@ const projects = [
   {
     title: "App de Delivery",
     description: "Aplicativo mobile para entrega de produtos",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-    tags: ["React Native", "Node.js"],
+    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
   },
   {
     title: "Plataforma E-commerce",
     description: "Sistema completo de vendas online",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    tags: ["React", "TypeScript"],
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
   },
   {
     title: "App de Gestão",
     description: "Sistema de gestão empresarial",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-    tags: ["Flutter", "Firebase"],
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
   },
 ];
 
 export const PortfolioSection = () => {
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="portfolio" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Nosso Portfolio</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-purple-600 bg-clip-text text-transparent">
+            Nosso Portfolio
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Conheça alguns dos projetos incríveis que desenvolvemos para nossos clientes.
           </p>
         </div>
@@ -35,7 +41,7 @@ export const PortfolioSection = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <img
                 src={project.image}
@@ -45,22 +51,18 @@ export const PortfolioSection = () => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
             </div>
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button size="lg">Ver Mais Projetos</Button>
+          <Button 
+            size="lg"
+            onClick={scrollToContact}
+            className="bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300"
+          >
+            Solicitar Orçamento
+          </Button>
         </div>
       </div>
     </section>

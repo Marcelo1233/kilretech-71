@@ -6,6 +6,14 @@ import { Logo } from "./Logo";
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 py-3 md:py-4">
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -15,10 +23,22 @@ export const Navbar = () => {
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#services" className="text-sm md:text-base hover:text-primary transition-colors">Serviços</a>
-          <a href="#portfolio" className="text-sm md:text-base hover:text-primary transition-colors">Portfolio</a>
-          <a href="#contact" className="text-sm md:text-base hover:text-primary transition-colors">Contato</a>
-          <Button size="lg" className="text-sm md:text-base">Solicitar Orçamento</Button>
+          <button onClick={() => scrollToSection('services')} className="text-sm md:text-base hover:text-primary transition-colors">
+            Serviços
+          </button>
+          <button onClick={() => scrollToSection('portfolio')} className="text-sm md:text-base hover:text-primary transition-colors">
+            Portfolio
+          </button>
+          <button onClick={() => scrollToSection('contact')} className="text-sm md:text-base hover:text-primary transition-colors">
+            Contato
+          </button>
+          <Button 
+            size="lg" 
+            className="text-sm md:text-base"
+            onClick={() => scrollToSection('contact')}
+          >
+            Solicitar Orçamento
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -34,30 +54,27 @@ export const Navbar = () => {
         {isMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
             <div className="flex flex-col p-4 gap-4">
-              <a 
-                href="#services" 
+              <button 
+                onClick={() => scrollToSection('services')}
                 className="text-sm hover:text-primary transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
               >
                 Serviços
-              </a>
-              <a 
-                href="#portfolio" 
+              </button>
+              <button 
+                onClick={() => scrollToSection('portfolio')}
                 className="text-sm hover:text-primary transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
               >
                 Portfolio
-              </a>
-              <a 
-                href="#contact" 
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')}
                 className="text-sm hover:text-primary transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
               >
                 Contato
-              </a>
+              </button>
               <Button 
                 className="w-full text-sm"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => scrollToSection('contact')}
               >
                 Solicitar Orçamento
               </Button>
