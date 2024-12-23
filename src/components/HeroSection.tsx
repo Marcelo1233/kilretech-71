@@ -36,75 +36,73 @@ export const HeroSection = () => {
             </div>
           </div>
           <div className="relative h-[400px] animate-fade-up">
-            <div className="absolute inset-0">
-              <TooltipProvider>
-                {/* Círculo 1 - Apps Mobile */}
-                <Draggable bounds="parent">
-                  <div>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <div 
-                          className="absolute top-1/4 left-1/4 animate-float-1 cursor-move"
-                          onClick={() => handleCircleClick("Apps Mobile")}
-                        >
-                          <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
-                            <Smartphone className="w-8 h-8 text-primary mb-2" />
-                            <h3 className="font-semibold text-sm text-center">Apps Mobile</h3>
-                          </div>
+            <TooltipProvider>
+              {/* Círculo 1 - Apps Mobile */}
+              <Draggable>
+                <div>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <div 
+                        className="absolute top-1/4 left-1/4 animate-float-1 cursor-move"
+                        onClick={() => handleCircleClick("Apps Mobile")}
+                      >
+                        <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
+                          <Smartphone className="w-8 h-8 text-primary mb-2" />
+                          <h3 className="font-semibold text-sm text-center">Apps Mobile</h3>
                         </div>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Desenvolvimento de aplicativos iOS e Android</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </div>
-                </Draggable>
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Desenvolvimento de aplicativos iOS e Android</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              </Draggable>
 
-                {/* Círculo 2 - Performance Otimizada */}
-                <Draggable bounds="parent">
-                  <div>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <div 
-                          className="absolute top-1/2 right-1/4 animate-float-2 cursor-move"
-                          onClick={() => handleCircleClick("Performance Otimizada")}
-                        >
-                          <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
-                            <Zap className="w-8 h-8 text-primary mb-2" />
-                            <h3 className="font-semibold text-sm text-center">Performance Otimizada</h3>
-                          </div>
+              {/* Círculo 2 - Performance Otimizada */}
+              <Draggable>
+                <div>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <div 
+                        className="absolute top-1/2 right-1/4 animate-float-2 cursor-move"
+                        onClick={() => handleCircleClick("Performance Otimizada")}
+                      >
+                        <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
+                          <Zap className="w-8 h-8 text-primary mb-2" />
+                          <h3 className="font-semibold text-sm text-center">Performance Otimizada</h3>
                         </div>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Aplicações rápidas e responsivas</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </div>
-                </Draggable>
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Aplicações rápidas e responsivas</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              </Draggable>
 
-                {/* Círculo 3 - Desenvolvimento Web */}
-                <Draggable bounds="parent">
-                  <div>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <div 
-                          className="absolute bottom-1/4 left-1/3 animate-float-3 cursor-move"
-                          onClick={() => handleCircleClick("Desenvolvimento Web")}
-                        >
-                          <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
-                            <Code className="w-8 h-8 text-accent mb-2" />
-                            <h3 className="font-semibold text-sm text-center">Desenvolvimento Web</h3>
-                          </div>
+              {/* Círculo 3 - Desenvolvimento Web */}
+              <Draggable>
+                <div>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <div 
+                        className="absolute bottom-1/4 left-1/3 animate-float-3 cursor-move"
+                        onClick={() => handleCircleClick("Desenvolvimento Web")}
+                      >
+                        <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
+                          <Code className="w-8 h-8 text-accent mb-2" />
+                          <h3 className="font-semibold text-sm text-center">Desenvolvimento Web</h3>
                         </div>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Sites e aplicações web modernas</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </div>
-                </Draggable>
-              </TooltipProvider>
-            </div>
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Sites e aplicações web modernas</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              </Draggable>
+            </TooltipProvider>
           </div>
         </div>
       </div>
