@@ -3,67 +3,86 @@ import { motion } from "framer-motion";
 
 export const DeliverySection = () => {
   return (
-    <section className="py-16 bg-gradient-to-br from-[#fdfcfb] to-[#e2d1c3]">
+    <section className="py-24 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
             Prazo de Entrega Garantido
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Comprometidos com a excelência e pontualidade em cada projeto
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg">
+            Nossa metodologia ágil garante entregas pontuais e resultados excepcionais
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
-            <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
-              <div className="flex items-start space-x-4">
-                <Calendar className="w-8 h-8 text-primary flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">120 Dias de Desenvolvimento</h3>
-                  <p className="text-gray-600">
-                    Prazo máximo para entrega do seu projeto completo e funcional
-                  </p>
+        <div className="grid md:grid-cols-3 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="mb-6">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                  <Calendar className="w-8 h-8 text-primary" />
                 </div>
+                <h3 className="text-xl font-bold mb-3">Cronograma Definido</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Desenvolvimento completo em até 120 dias, com marcos claros e entregas progressivas
+                </p>
               </div>
             </div>
+          </motion.div>
 
-            <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
-              <div className="flex items-start space-x-4">
-                <Clock className="w-8 h-8 text-primary flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Atualizações Semanais</h3>
-                  <p className="text-gray-600">
-                    Acompanhamento constante do progresso do seu projeto
-                  </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="relative group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="mb-6">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                  <Clock className="w-8 h-8 text-primary" />
                 </div>
+                <h3 className="text-xl font-bold mb-3">Acompanhamento Semanal</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Reuniões semanais para apresentação de progresso e alinhamento de expectativas
+                </p>
               </div>
             </div>
+          </motion.div>
 
-            <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="w-8 h-8 text-primary flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Garantia de Qualidade</h3>
-                  <p className="text-gray-600">
-                    Testes rigorosos e validações em cada etapa do desenvolvimento
-                  </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="relative group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="mb-6">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                  <CheckCircle className="w-8 h-8 text-primary" />
                 </div>
+                <h3 className="text-xl font-bold mb-3">Garantia de Qualidade</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Testes rigorosos e validações em cada etapa do desenvolvimento
+                </p>
               </div>
             </div>
-          </div>
-
-          <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-                alt="Desenvolvimento de projeto"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-accent/10 rounded-full blur-2xl" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
