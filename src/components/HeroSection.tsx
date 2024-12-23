@@ -18,23 +18,30 @@ export const HeroSection = () => {
               <Button size="lg" variant="outline">Ver Portfolio</Button>
             </div>
           </div>
-          <div className="relative animate-fade-up">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
-            <div className="relative grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="p-6 bg-white/80 backdrop-blur rounded-2xl shadow-lg">
+          <div className="relative h-[400px] animate-fade-up">
+            {/* Círculos flutuantes */}
+            <div className="absolute inset-0">
+              {/* Círculo 1 - Apps Mobile */}
+              <div className="absolute top-1/4 left-1/4 animate-float-1">
+                <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
                   <Smartphone className="w-8 h-8 text-primary mb-2" />
-                  <h3 className="font-semibold">Apps Mobile</h3>
-                </div>
-                <div className="p-6 bg-white/80 backdrop-blur rounded-2xl shadow-lg">
-                  <Code className="w-8 h-8 text-accent mb-2" />
-                  <h3 className="font-semibold">Desenvolvimento Web</h3>
+                  <h3 className="font-semibold text-sm text-center">Apps Mobile</h3>
                 </div>
               </div>
-              <div className="pt-8">
-                <div className="p-6 bg-white/80 backdrop-blur rounded-2xl shadow-lg">
+
+              {/* Círculo 2 - Performance Otimizada */}
+              <div className="absolute top-1/2 right-1/4 animate-float-2">
+                <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
                   <Zap className="w-8 h-8 text-primary mb-2" />
-                  <h3 className="font-semibold">Performance Otimizada</h3>
+                  <h3 className="font-semibold text-sm text-center">Performance Otimizada</h3>
+                </div>
+              </div>
+
+              {/* Círculo 3 - Desenvolvimento Web */}
+              <div className="absolute bottom-1/4 left-1/3 animate-float-3">
+                <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
+                  <Code className="w-8 h-8 text-accent mb-2" />
+                  <h3 className="font-semibold text-sm text-center">Desenvolvimento Web</h3>
                 </div>
               </div>
             </div>
