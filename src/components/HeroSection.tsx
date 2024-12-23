@@ -43,20 +43,21 @@ export const HeroSection = () => {
               <Button size="lg" variant="outline">Ver Portfolio</Button>
             </div>
           </div>
-          <div className="relative h-[400px] animate-fade-up">
+          <div className="relative h-[400px] flex items-center justify-center animate-fade-up">
             <TooltipProvider>
-              {/* Círculo 1 - Apps Mobile */}
+              {/* Bolha 1 - Apps Mobile */}
               <Draggable>
                 <div>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div 
-                        className="absolute top-1/4 left-1/4 animate-float-1 cursor-move"
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-float-1 cursor-move"
                         onClick={() => handleCircleClick("Apps Mobile")}
                       >
-                        <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
+                        <div className="p-6 bg-[#D3E4FD] backdrop-blur-sm rounded-[30px] shadow-lg w-36 h-36 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 border-2 border-white/50">
                           <Smartphone className="w-8 h-8 text-primary mb-2" />
                           <h3 className="font-semibold text-sm text-center">Apps Mobile</h3>
+                          <p className="text-xs text-gray-600 mt-1">IOS e Android</p>
                         </div>
                       </div>
                     </TooltipTrigger>
@@ -67,18 +68,19 @@ export const HeroSection = () => {
                 </div>
               </Draggable>
 
-              {/* Círculo 2 - Performance Otimizada */}
+              {/* Bolha 2 - Performance */}
               <Draggable>
                 <div>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div 
-                        className="absolute top-1/2 right-1/4 animate-float-2 cursor-move"
+                        className="absolute top-1/4 left-1/2 -translate-x-1/2 animate-float-2 cursor-move"
                         onClick={() => handleCircleClick("Performance Otimizada")}
                       >
-                        <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
+                        <div className="p-6 bg-[#FDE1D3] backdrop-blur-sm rounded-[30px] shadow-lg w-36 h-36 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 border-2 border-white/50">
                           <Zap className="w-8 h-8 text-primary mb-2" />
-                          <h3 className="font-semibold text-sm text-center">Performance Otimizada</h3>
+                          <h3 className="font-semibold text-sm text-center">Performance</h3>
+                          <p className="text-xs text-gray-600 mt-1">Alta velocidade</p>
                         </div>
                       </div>
                     </TooltipTrigger>
@@ -89,18 +91,19 @@ export const HeroSection = () => {
                 </div>
               </Draggable>
 
-              {/* Círculo 3 - Desenvolvimento Web */}
+              {/* Bolha 3 - Web */}
               <Draggable>
                 <div>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div 
-                        className="absolute bottom-1/4 left-1/3 animate-float-3 cursor-move"
+                        className="absolute bottom-1/4 left-1/2 -translate-x-1/2 animate-float-3 cursor-move"
                         onClick={() => handleCircleClick("Desenvolvimento Web")}
                       >
-                        <div className="p-6 bg-white/80 backdrop-blur rounded-full shadow-lg w-32 h-32 flex flex-col items-center justify-center transform hover:scale-110 transition-transform">
+                        <div className="p-6 bg-[#E5DEFF] backdrop-blur-sm rounded-[30px] shadow-lg w-36 h-36 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300 border-2 border-white/50">
                           <Code className="w-8 h-8 text-accent mb-2" />
-                          <h3 className="font-semibold text-sm text-center">Desenvolvimento Web</h3>
+                          <h3 className="font-semibold text-sm text-center">Web</h3>
+                          <p className="text-xs text-gray-600 mt-1">Sites modernos</p>
                         </div>
                       </div>
                     </TooltipTrigger>
