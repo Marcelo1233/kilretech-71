@@ -6,7 +6,7 @@ export const TeamSection = () => {
     {
       name: "Marcelo Nascimento",
       role: "CEO e Líder de Projetos",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/bacdf0c2-e8f8-4db8-9244-465ef56c9b4a.png",
       description: "Líder experiente com visão estratégica para desenvolvimento de soluções inovadoras."
     },
     {
