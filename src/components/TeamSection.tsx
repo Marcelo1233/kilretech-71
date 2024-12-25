@@ -4,28 +4,28 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export const TeamSection = () => {
   const team = [
     {
-      name: "João Silva",
-      role: "Desenvolvedor Full Stack",
+      name: "Marcelo Nascimento",
+      role: "CEO e Líder de Projetos",
       image: "/placeholder.svg",
-      description: "Especialista em desenvolvimento web com mais de 5 anos de experiência."
+      description: "Líder experiente com visão estratégica para desenvolvimento de soluções inovadoras."
     },
     {
-      name: "Maria Santos",
-      role: "UI/UX Designer",
+      name: "João Paulo",
+      role: "Vice-líder e Desenvolvedor",
       image: "/placeholder.svg",
-      description: "Designer criativa com foco em experiências digitais intuitivas."
+      description: "Profissional com ampla experiência em desenvolvimento e gestão de equipes."
     },
     {
-      name: "Pedro Costa",
-      role: "Gerente de Projetos",
+      name: "Luiz Guilherme",
+      role: "Desenvolvedor",
       image: "/placeholder.svg",
-      description: "Profissional certificado em gestão ágil de projetos."
+      description: "Desenvolvedor talentoso especializado em criar soluções eficientes."
     },
     {
-      name: "Ana Oliveira",
-      role: "Desenvolvedora Front-end",
+      name: "Ryan",
+      role: "Desenvolvedor",
       image: "/placeholder.svg",
-      description: "Especialista em criar interfaces modernas e responsivas."
+      description: "Desenvolvedor dedicado com foco em qualidade e inovação."
     }
   ];
 
