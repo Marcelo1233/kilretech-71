@@ -2,9 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import emailjs from '@emailjs/browser';
 import { useToast } from "@/components/ui/use-toast";
+
+// Initialize EmailJS with your public key
+emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key from EmailJS
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -30,16 +33,15 @@ export const ContactSection = () => {
 
     try {
       await emailjs.send(
-        'service_id', // You'll need to replace this with your EmailJS service ID
-        'template_id', // You'll need to replace this with your EmailJS template ID
+        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
         {
           to_email: 'marcelodev766@gmail.com',
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
-        },
-        'your_public_key' // You'll need to replace this with your EmailJS public key
+        }
       );
 
       toast({
@@ -54,6 +56,7 @@ export const ContactSection = () => {
         message: ''
       });
     } catch (error) {
+      console.error('EmailJS Error:', error);
       toast({
         title: "Erro ao enviar mensagem",
         description: "Por favor, tente novamente mais tarde.",
