@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 
-const projects = [
+const initialProjects = [
   {
     title: "App de Delivery",
     description: "Aplicativo mobile para entrega de produtos",
@@ -18,13 +20,27 @@ const projects = [
   },
 ];
 
+const additionalProjects = [
+  {
+    title: "Sistema de CRM",
+    description: "Plataforma de gestão de relacionamento com clientes",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+  },
+  {
+    title: "App de Finanças",
+    description: "Aplicativo para controle financeiro pessoal",
+    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e",
+  },
+  {
+    title: "Rede Social",
+    description: "Plataforma de conexão entre profissionais",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113",
+  },
+];
+
 export const PortfolioSection = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [showMore, setShowMore] = useState(false);
+  const projects = showMore ? [...initialProjects, ...additionalProjects] : initialProjects;
 
   return (
     <section id="portfolio" className="py-20 bg-gray-50">
@@ -38,30 +54,36 @@ export const PortfolioSection = () => {
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-              </div>
-            </div>
-          ))}
+          <AnimatePresence>
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
         <div className="text-center mt-12">
           <Button 
             size="lg"
-            onClick={scrollToContact}
+            onClick={() => setShowMore(!showMore)}
             className="bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300"
           >
-            Solicitar Orçamento
+            {showMore ? "Ver Menos" : "Ver Mais Projetos"}
           </Button>
         </div>
       </div>
