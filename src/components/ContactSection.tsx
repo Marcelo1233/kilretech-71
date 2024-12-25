@@ -2,8 +2,68 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/components/ui/use-toast";
 
 export const ContactSection = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        'service_id', // You'll need to replace this with your EmailJS service ID
+        'template_id', // You'll need to replace this with your EmailJS template ID
+        {
+          to_email: 'marcelodev766@gmail.com',
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        'your_public_key' // You'll need to replace this with your EmailJS public key
+      );
+
+      toast({
+        title: "Mensagem enviada!",
+        description: "Agradecemos seu contato. Retornaremos em breve.",
+      });
+
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Por favor, tente novamente mais tarde.",
+        variant: "destructive",
+      });
+    }
+
+    setIsSubmitting(false);
+  };
+
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
@@ -47,37 +107,55 @@ export const ContactSection = () => {
             </div>
           </div>
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700">
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Nome completo" 
                   className="border-2 focus:border-primary transition-colors"
+                  required
                 />
               </div>
               <div>
                 <Input 
+                  name="email"
                   type="email" 
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Email" 
                   className="border-2 focus:border-primary transition-colors"
+                  required
                 />
               </div>
               <div>
                 <Input 
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   placeholder="Assunto" 
                   className="border-2 focus:border-primary transition-colors"
+                  required
                 />
               </div>
               <div>
                 <Textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Mensagem" 
                   className="min-h-[150px] border-2 focus:border-primary transition-colors"
+                  required
                 />
               </div>
               <Button 
+                type="submit"
+                disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300 group"
                 size="lg"
               >
-                Enviar Mensagem
+                {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
                 <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </form>
