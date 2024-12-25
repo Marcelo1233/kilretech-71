@@ -2,12 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import emailjs from '@emailjs/browser';
 import { useToast } from "@/components/ui/use-toast";
 
+// We'll need to set up these values securely
+const EMAILJS_PUBLIC_KEY = "";
+const EMAILJS_SERVICE_ID = "";
+const EMAILJS_TEMPLATE_ID = "";
+
 // Initialize EmailJS with your public key
-emailjs.init(process.env.EMAILJS_PUBLIC_KEY || ""); // We'll handle this securely
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -41,8 +46,8 @@ export const ContactSection = () => {
       };
 
       await emailjs.send(
-        process.env.EMAILJS_SERVICE_ID || "", // We'll handle this securely
-        process.env.EMAILJS_TEMPLATE_ID || "", // We'll handle this securely
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         templateParams
       );
 
