@@ -7,7 +7,7 @@ import emailjs from '@emailjs/browser';
 import { useToast } from "@/components/ui/use-toast";
 
 // Initialize EmailJS with your public key
-emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key from EmailJS
+emailjs.init(process.env.EMAILJS_PUBLIC_KEY || ""); // We'll handle this securely
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -32,16 +32,18 @@ export const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
+      const templateParams = {
+        to_email: 'marcelodev766@gmail.com',
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      };
+
       await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
-        {
-          to_email: 'marcelodev766@gmail.com',
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        }
+        process.env.EMAILJS_SERVICE_ID || "", // We'll handle this securely
+        process.env.EMAILJS_TEMPLATE_ID || "", // We'll handle this securely
+        templateParams
       );
 
       toast({
