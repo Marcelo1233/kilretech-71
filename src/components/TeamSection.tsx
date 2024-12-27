@@ -35,7 +35,7 @@ export const TeamSection = () => {
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-4xl font-bold mb-4">Nossa Equipe</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Conheça os profissionais dedicados que fazem a diferença em cada projeto
+            Conheça os principais colaboradores dedicados que fazem a diferença em cada projeto
           </p>
         </div>
         
