@@ -38,6 +38,43 @@ const additionalProjects = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { 
+    opacity: 0,
+    y: 20,
+    scale: 0.95
+  },
+  show: { 
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    }
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    scale: 0.95,
+    transition: {
+      duration: 0.3
+    }
+  }
+};
+
 export const PortfolioSection = () => {
   const [showMore, setShowMore] = useState(false);
   const projects = showMore ? [...initialProjects, ...additionalProjects] : initialProjects;
@@ -53,30 +90,40 @@ export const PortfolioSection = () => {
             Conheça alguns dos projetos incríveis que desenvolvemos para nossos clientes.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence>
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <AnimatePresence mode="wait">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                variants={itemVariants}
+                initial="hidden"
+                animate="show"
+                exit="exit"
+                layout
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
-                <img
+                <motion.img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover"
+                  layoutId={`image-${project.title}`}
                 />
-                <div className="p-6">
+                <motion.div 
+                  className="p-6"
+                  layoutId={`content-${project.title}`}
+                >
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-gray-600 mb-4">{project.description}</p>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </AnimatePresence>
-        </div>
+        </motion.div>
         <div className="text-center mt-12">
           <Button 
             size="lg"
