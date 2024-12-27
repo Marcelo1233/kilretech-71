@@ -4,36 +4,36 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const initialProjects = [
   {
-    title: "App de Delivery",
-    description: "Aplicativo mobile para entrega de produtos",
+    title: "App de Delivery Rápido",
+    description: "Sistema completo de delivery com rastreamento em tempo real e interface intuitiva para restaurantes e clientes.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
   },
   {
-    title: "Plataforma E-commerce",
-    description: "Sistema completo de vendas online",
+    title: "E-commerce Mobile",
+    description: "Aplicativo de vendas com experiência personalizada, sistema de recomendações e pagamento integrado.",
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
   },
   {
-    title: "App de Gestão",
-    description: "Sistema de gestão empresarial",
+    title: "Sistema de Gestão Mobile",
+    description: "App empresarial com dashboards em tempo real, gestão de equipes e relatórios personalizados.",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
   },
 ];
 
 const additionalProjects = [
   {
-    title: "Sistema de CRM",
-    description: "Plataforma de gestão de relacionamento com clientes",
+    title: "CRM Mobile",
+    description: "Aplicativo de gestão de clientes com automação de processos e análise preditiva de vendas.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
   },
   {
-    title: "App de Finanças",
-    description: "Aplicativo para controle financeiro pessoal",
+    title: "Finanças Pessoais",
+    description: "App de controle financeiro com planejamento de metas, investimentos e educação financeira.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
   },
   {
-    title: "Rede Social",
-    description: "Plataforma de conexão entre profissionais",
+    title: "Rede Profissional",
+    description: "Plataforma mobile para networking profissional com recursos de mentoria e oportunidades de carreira.",
     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
   },
 ];
