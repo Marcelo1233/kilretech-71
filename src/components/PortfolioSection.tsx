@@ -114,11 +114,11 @@ export const PortfolioSection = () => {
                   layoutId={`image-${project.title}`}
                 />
                 <motion.div 
-                  className="p-6"
+                  className="p-6 text-center"
                   layoutId={`content-${project.title}`}
                 >
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <p className="text-gray-600">{project.description}</p>
                 </motion.div>
               </motion.div>
             ))}
