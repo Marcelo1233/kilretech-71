@@ -18,7 +18,7 @@ export const TeamSection = () => {
     {
       name: "Luiz Guilherme",
       role: "Desenvolvedor",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/60f9c7e9-53fb-44b3-9253-6c1f14d6fda2.png",
       description: "Desenvolvedor talentoso especializado em criar soluções eficientes."
     },
     {
