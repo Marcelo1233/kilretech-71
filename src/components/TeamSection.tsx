@@ -12,7 +12,7 @@ export const TeamSection = () => {
     {
       name: "João Paulo",
       role: "Vice-líder e Desenvolvedor",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/7b8e7d8c-f151-474a-9cc2-81818c1ce6de.png",
       description: "Profissional com ampla experiência em desenvolvimento e gestão de equipes."
     },
     {
