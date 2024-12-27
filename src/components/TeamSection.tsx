@@ -25,7 +25,7 @@ export const TeamSection = () => {
       name: "Alef Ryan",
       role: "Desenvolvedor",
       image: "/lovable-uploads/6e2f2c93-2dd3-4e66-8fd0-007bf232bd2a.png",
-      description: "Desenvolvedor dedicado com foco em qualidade e inovação."
+      description: "Desenvolvedor experiente com foco em qualidade e inovação, trazendo vasta experiência do mercado."
     }
   ];
 
