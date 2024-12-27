@@ -6,17 +6,17 @@ const initialProjects = [
   {
     title: "App de Delivery",
     description: "Aplicativo mobile para entrega de produtos",
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
   },
   {
     title: "Plataforma E-commerce",
     description: "Sistema completo de vendas online",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
   },
   {
     title: "App de Gestão",
     description: "Sistema de gestão empresarial",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
   },
 ];
 
@@ -24,17 +24,17 @@ const additionalProjects = [
   {
     title: "Sistema de CRM",
     description: "Plataforma de gestão de relacionamento com clientes",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
   },
   {
     title: "App de Finanças",
     description: "Aplicativo para controle financeiro pessoal",
-    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
   },
   {
     title: "Rede Social",
     description: "Plataforma de conexão entre profissionais",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113",
+    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
   },
 ];
 
