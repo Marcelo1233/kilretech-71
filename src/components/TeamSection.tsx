@@ -22,9 +22,9 @@ export const TeamSection = () => {
       description: "Desenvolvedor talentoso especializado em criar soluções eficientes."
     },
     {
-      name: "Ryan",
+      name: "Alef Ryan",
       role: "Desenvolvedor",
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/6e2f2c93-2dd3-4e66-8fd0-007bf232bd2a.png",
       description: "Desenvolvedor dedicado com foco em qualidade e inovação."
     }
   ];
