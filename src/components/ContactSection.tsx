@@ -22,18 +22,25 @@ export const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent, useGmail = false) => {
     e.preventDefault();
     
-    const mailtoLink = `mailto:contato.kilretech@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`
-    )}`;
+    const emailBody = `Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`;
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(emailBody);
     
-    window.location.href = mailtoLink;
+    let mailLink;
+    if (useGmail) {
+      mailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=contato.kilretech@gmail.com&su=${subject}&body=${body}`;
+    } else {
+      mailLink = `mailto:contato.kilretech@gmail.com?subject=${subject}&body=${body}`;
+    }
+    
+    window.open(mailLink, '_blank');
     
     toast({
       title: "Email preparado!",
-      description: "Seu cliente de email foi aberto com a mensagem.",
+      description: useGmail ? "Gmail foi aberto com a mensagem." : "Seu cliente de email foi aberto com a mensagem.",
     });
 
     setFormData({
@@ -99,7 +106,7 @@ export const ContactSection = () => {
             </div>
           </div>
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={(e) => handleSubmit(e)} className="space-y-6">
               <div>
                 <Input 
                   name="name"
@@ -141,14 +148,25 @@ export const ContactSection = () => {
                   required
                 />
               </div>
-              <Button 
-                type="submit"
-                className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300 group"
-                size="lg"
-              >
-                Enviar Mensagem
-                <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <div className="flex gap-4">
+                <Button 
+                  type="submit"
+                  className="flex-1 bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300 group"
+                  size="lg"
+                >
+                  Email Padrão
+                  <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button 
+                  type="button"
+                  onClick={(e) => handleSubmit(e, true)}
+                  className="flex-1 bg-gradient-to-r from-red-500 to-red-600 hover:opacity-90 transition-all duration-300 group"
+                  size="lg"
+                >
+                  Gmail
+                  <Mail className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
             </form>
           </div>
         </div>
