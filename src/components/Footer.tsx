@@ -52,7 +52,7 @@ export const Footer = () => {
               <a href="#" className="hover:text-primary transition-colors">
                 <Facebook size={20} className="md:w-6 md:h-6" />
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/kilretech" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                 <Instagram size={20} className="md:w-6 md:h-6" />
               </a>
               <a href="#" className="hover:text-primary transition-colors">
