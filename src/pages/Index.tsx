@@ -6,10 +6,12 @@ import { PortfolioSection } from "@/components/PortfolioSection";
 import { TeamSection } from "@/components/TeamSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <AnimatedBackground />
       <Navbar />
       <HeroSection />
       <DeliverySection />
