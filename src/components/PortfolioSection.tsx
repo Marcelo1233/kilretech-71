@@ -22,9 +22,9 @@ const initialProjects = [
 
 const additionalProjects = [
   {
-    title: "Sistema de CRM",
-    description: "Plataforma de gestão de relacionamento com clientes",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    title: "App de Treino",
+    description: "Aplicativo para acompanhamento de exercícios físicos",
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
   },
   {
     title: "App de Finanças",
