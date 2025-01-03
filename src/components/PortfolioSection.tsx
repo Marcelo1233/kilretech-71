@@ -36,7 +36,7 @@ const additionalProjects = [
     description: "Plataforma de conexão entre profissionais",
     image: "/lovable-uploads/03d8b33e-fb82-471f-96c0-f0df5a9899cc.png",
   },
-];
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -80,13 +80,13 @@ export const PortfolioSection = () => {
   const projects = showMore ? [...initialProjects, ...additionalProjects] : initialProjects;
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-50">
+    <section id="portfolio" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-purple-600 bg-clip-text text-transparent">
             Nosso Portfólio
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
             Conheça alguns dos projetos incríveis que desenvolvemos para nossos clientes.
           </p>
         </div>
@@ -105,7 +105,7 @@ export const PortfolioSection = () => {
                 animate="show"
                 exit="exit"
                 layout
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <motion.img
                   src={project.image}
@@ -117,8 +117,8 @@ export const PortfolioSection = () => {
                   className="p-6 text-center"
                   layoutId={`content-${project.title}`}
                 >
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-600">{project.description}</p>
+                  <h3 className="text-xl font-semibold mb-2 dark:text-white">{project.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
                 </motion.div>
               </motion.div>
             ))}
