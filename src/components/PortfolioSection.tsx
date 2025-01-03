@@ -6,7 +6,7 @@ const initialProjects = [
   {
     title: "App de Delivery",
     description: "Aplicativo mobile para entrega de produtos",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    image: "/lovable-uploads/77314130-0374-453a-86bd-8615eec549ca.png",
   },
   {
     title: "Plataforma E-commerce",
