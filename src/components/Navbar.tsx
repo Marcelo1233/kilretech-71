@@ -5,23 +5,12 @@ import { Logo } from "./Logo";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true); // Set default to true
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
-    // Check if user has a saved preference
-    const savedTheme = localStorage.getItem('theme');
-    // If no saved preference, default to dark mode
-    if (!savedTheme) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      // If there is a saved preference, use it
-      const isDark = savedTheme === 'dark';
-      setIsDarkMode(isDark);
-      if (isDark) {
-        document.documentElement.classList.add('dark');
-      }
-    }
+    // Always start with dark mode
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
   }, []);
 
   const toggleDarkMode = () => {
