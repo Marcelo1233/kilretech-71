@@ -90,7 +90,12 @@ export const ContactSection = () => {
                 <Mail className="w-6 h-6 text-primary" />
                 <div>
                   <h3 className="font-semibold text-lg">Email</h3>
-                  <p className="text-gray-600 dark:text-gray-300">contato@kilretech.com.br</p>
+                  <a 
+                    href="mailto:contato.kilretech@gmail.com" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+                  >
+                    contato.kilretech@gmail.com
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
