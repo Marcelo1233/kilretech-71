@@ -29,7 +29,7 @@ const additionalProjects = [
   {
     title: "App de Finanças",
     description: "Aplicativo para controle financeiro pessoal",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    image: "/lovable-uploads/b4307ba1-15c8-4d3a-b7fe-93e0945c7a5a.png",
   },
   {
     title: "Rede Social",
