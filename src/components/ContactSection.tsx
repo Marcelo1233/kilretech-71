@@ -96,8 +96,8 @@ export const ContactSection = () => {
               <div className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
                 <Phone className="w-6 h-6 text-primary" />
                 <div>
-                  <h3 className="font-semibold text-lg">Telefone</h3>
-                  <p className="text-gray-600 dark:text-gray-300">(11) 99999-9999</p>
+                  <h3 className="font-semibold text-lg">WhatsApp</h3>
+                  <p className="text-gray-600 dark:text-gray-300">+55 (79) 9658-5070</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
