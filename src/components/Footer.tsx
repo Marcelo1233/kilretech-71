@@ -65,7 +65,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 md:mt-12 pt-6 md:pt-8 text-center">
-          <p className="text-sm md:text-base text-gray-400">&copy; 2024 KilreTech. Todos os direitos reservados.</p>
+          <p className="text-sm md:text-base text-gray-400">&copy; 2025 KilreTech. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
