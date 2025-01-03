@@ -1,7 +1,16 @@
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { toast } from "@/hooks/use-toast";
 
 export const Footer = () => {
+  const handleSocialClick = (network: string) => {
+    toast({
+      title: "Em breve!",
+      description: `Nossa página no ${network} estará disponível em breve.`,
+      duration: 3000,
+    });
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-8 md:py-12">
       <div className="container mx-auto px-4">
@@ -49,18 +58,21 @@ export const Footer = () => {
           <div>
             <h4 className="text-sm md:text-base font-semibold mb-3 md:mb-4">Redes Sociais</h4>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-primary transition-colors">
+              <button 
+                onClick={() => handleSocialClick("Facebook")} 
+                className="hover:text-primary transition-colors"
+              >
                 <Facebook size={20} className="md:w-6 md:h-6" />
-              </a>
+              </button>
               <a href="https://www.instagram.com/kilretech" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                 <Instagram size={20} className="md:w-6 md:h-6" />
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                <Twitter size={20} className="md:w-6 md:h-6" />
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <button 
+                onClick={() => handleSocialClick("LinkedIn")} 
+                className="hover:text-primary transition-colors"
+              >
                 <Linkedin size={20} className="md:w-6 md:h-6" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
