@@ -102,7 +102,14 @@ export const ContactSection = () => {
                 <Phone className="w-6 h-6 text-primary" />
                 <div>
                   <h3 className="font-semibold text-lg">WhatsApp</h3>
-                  <p className="text-gray-600 dark:text-gray-300">+55 (79) 9658-5070</p>
+                  <a 
+                    href="https://wa.me/557996585070"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+                  >
+                    +55 (79) 9658-5070
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
