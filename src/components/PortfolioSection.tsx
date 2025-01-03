@@ -36,7 +36,7 @@ const additionalProjects = [
     description: "Plataforma de conexão entre profissionais",
     image: "/lovable-uploads/03d8b33e-fb82-471f-96c0-f0df5a9899cc.png",
   },
-};
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
