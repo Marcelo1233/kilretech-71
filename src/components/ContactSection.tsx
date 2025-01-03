@@ -3,16 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { useState } from "react";
-import emailjs from '@emailjs/browser';
 import { useToast } from "@/hooks/use-toast";
-
-// We'll need to set up these values securely
-const EMAILJS_PUBLIC_KEY = "";
-const EMAILJS_SERVICE_ID = "";
-const EMAILJS_TEMPLATE_ID = "";
-
-// Initialize EmailJS with your public key
-emailjs.init(EMAILJS_PUBLIC_KEY);
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -22,7 +13,6 @@ export const ContactSection = () => {
     subject: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -32,46 +22,26 @@ export const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    
+    const mailtoLink = `mailto:contato.kilretech@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`
+    )}`;
+    
+    window.location.href = mailtoLink;
+    
+    toast({
+      title: "Email preparado!",
+      description: "Seu cliente de email foi aberto com a mensagem.",
+    });
 
-    try {
-      const templateParams = {
-        to_email: 'contato.kilretech@gmail.com',
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-      };
-
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams
-      );
-
-      toast({
-        title: "Mensagem enviada!",
-        description: "Agradecemos seu contato. Retornaremos em breve.",
-      });
-
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('EmailJS Error:', error);
-      toast({
-        title: "Erro ao enviar mensagem",
-        description: "Por favor, tente novamente mais tarde.",
-        variant: "destructive",
-      });
-    }
-
-    setIsSubmitting(false);
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
   };
 
   return (
@@ -173,11 +143,10 @@ export const ContactSection = () => {
               </div>
               <Button 
                 type="submit"
-                disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300 group"
                 size="lg"
               >
-                {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
+                Enviar Mensagem
                 <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </form>
