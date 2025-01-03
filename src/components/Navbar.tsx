@@ -1,10 +1,33 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Check if user previously set a theme preference
+    const isDark = localStorage.getItem('theme') === 'dark';
+    setIsDarkMode(isDark);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newDarkMode = !isDarkMode;
+    setIsDarkMode(newDarkMode);
+    
+    if (newDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -15,7 +38,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 py-3 md:py-4">
+    <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 py-3 md:py-4">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#" className="hover:opacity-90 transition-opacity">
           <Logo />
@@ -23,13 +46,13 @@ export const Navbar = () => {
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          <button onClick={() => scrollToSection('services')} className="text-sm md:text-base hover:text-primary transition-colors">
+          <button onClick={() => scrollToSection('services')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
             Serviços
           </button>
-          <button onClick={() => scrollToSection('portfolio')} className="text-sm md:text-base hover:text-primary transition-colors">
+          <button onClick={() => scrollToSection('portfolio')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
             Portfolio
           </button>
-          <button onClick={() => scrollToSection('contact')} className="text-sm md:text-base hover:text-primary transition-colors">
+          <button onClick={() => scrollToSection('contact')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
             Contato
           </button>
           <Button 
@@ -39,36 +62,55 @@ export const Navbar = () => {
           >
             Solicitar Orçamento
           </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleDarkMode}
+            className="ml-2"
+            aria-label="Toggle dark mode"
+          >
+            {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden p-2" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleDarkMode}
+            aria-label="Toggle dark mode"
+          >
+            {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </Button>
+          <button 
+            className="p-2" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
+          <div className="absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg md:hidden">
             <div className="flex flex-col p-4 gap-4">
               <button 
                 onClick={() => scrollToSection('services')}
-                className="text-sm hover:text-primary transition-colors py-2"
+                className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
               >
                 Serviços
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
-                className="text-sm hover:text-primary transition-colors py-2"
+                className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
               >
                 Portfolio
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="text-sm hover:text-primary transition-colors py-2"
+                className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
               >
                 Contato
               </button>
