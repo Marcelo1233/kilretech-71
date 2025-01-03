@@ -16,7 +16,7 @@ const initialProjects = [
   {
     title: "App de Gestão",
     description: "Sistema de gestão empresarial",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    image: "/lovable-uploads/0bd262c2-a8fa-45ad-9314-0c0aa6a8d5f1.png",
   },
 ];
 
