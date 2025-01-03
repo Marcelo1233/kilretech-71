@@ -104,7 +104,7 @@ export const ContactSection = () => {
                 <MapPin className="w-6 h-6 text-primary" />
                 <div>
                   <h3 className="font-semibold text-lg">Endereço</h3>
-                  <p className="text-gray-600 dark:text-gray-300">Av. Paulista, 1000 - São Paulo, SP</p>
+                  <p className="text-gray-600 dark:text-gray-300">Rua Antônio Marques, 116 - Jardim São Paulo, Guarulhos - SP</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
