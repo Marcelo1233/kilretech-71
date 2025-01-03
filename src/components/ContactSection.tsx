@@ -4,7 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 
 // We'll need to set up these values securely
 const EMAILJS_PUBLIC_KEY = "";
@@ -38,7 +38,7 @@ export const ContactSection = () => {
 
     try {
       const templateParams = {
-        to_email: 'marcelodev766@gmail.com',
+        to_email: 'contato.kilretech@gmail.com',
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
