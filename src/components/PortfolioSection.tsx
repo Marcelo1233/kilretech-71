@@ -11,7 +11,7 @@ const initialProjects = [
   {
     title: "Plataforma E-commerce",
     description: "Sistema completo de vendas online",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+    image: "/lovable-uploads/fa081063-e06f-4b50-ba24-985da6df0668.png",
   },
   {
     title: "App de Gestão",
