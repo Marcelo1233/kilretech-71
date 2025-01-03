@@ -34,7 +34,7 @@ const additionalProjects = [
   {
     title: "Rede Social",
     description: "Plataforma de conexão entre profissionais",
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+    image: "/lovable-uploads/03d8b33e-fb82-471f-96c0-f0df5a9899cc.png",
   },
 ];
 
