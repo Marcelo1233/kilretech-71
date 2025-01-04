@@ -5,7 +5,7 @@ import { Clock, DollarSign, Smartphone, Workflow, Shield, Wrench } from "lucide-
 const faqs = [
   {
     question: "Quanto tempo leva para desenvolver um aplicativo?",
-    answer: "O tempo de desenvolvimento varia de acordo com a complexidade do projeto. Apps simples podem levar de 2-3 meses, enquanto projetos mais complexos podem levar 6 meses ou mais. Fazemos uma análise detalhada do seu projeto para fornecer um cronograma preciso.",
+    answer: "Nosso processo de desenvolvimento é completado em até 120 dias, com entregas progressivas e marcos bem definidos. Realizamos reuniões semanais para apresentar o progresso e garantir que tudo esteja alinhado com suas expectativas.",
     icon: Clock
   },
   {
@@ -15,22 +15,22 @@ const faqs = [
   },
   {
     question: "Vocês desenvolvem para iOS e Android?",
-    answer: "Sim! Desenvolvemos aplicativos nativos para ambas as plataformas, bem como soluções híbridas usando tecnologias como React Native, garantindo alta performance e experiência nativa em todas as plataformas.",
+    answer: "Sim! Desenvolvemos aplicativos para ambas as plataformas, garantindo alta performance e excelente experiência do usuário em todos os dispositivos.",
     icon: Smartphone
   },
   {
     question: "Como é o processo de desenvolvimento?",
-    answer: "Nosso processo inclui: 1) Análise de requisitos e planejamento, 2) Design de interface e experiência do usuário, 3) Desenvolvimento e testes, 4) Revisão e ajustes, 5) Lançamento e suporte contínuo.",
+    answer: "Nosso processo inclui: 1) Análise inicial e planejamento, 2) Design da interface, 3) Desenvolvimento com entregas a cada 15 dias, 4) Testes rigorosos, 5) Acompanhamento semanal do progresso.",
     icon: Workflow
   },
   {
     question: "Oferecem suporte após o lançamento?",
-    answer: "Sim, oferecemos suporte contínuo após o lançamento, incluindo manutenção, atualizações de segurança, correções de bugs e implementação de novas funcionalidades conforme necessário.",
+    answer: "Sim, oferecemos suporte contínuo após o lançamento, incluindo manutenção, atualizações de segurança e implementação de novas funcionalidades conforme necessário.",
     icon: Wrench
   },
   {
-    question: "Como garantem a segurança dos aplicativos?",
-    answer: "Implementamos as melhores práticas de segurança, incluindo criptografia de dados, autenticação segura, proteção contra vulnerabilidades comuns e conformidade com regulamentações de privacidade.",
+    question: "Como garantem a qualidade do projeto?",
+    answer: "Realizamos testes rigorosos em cada etapa do desenvolvimento, com validações semanais e demonstrações do progresso para garantir que tudo esteja funcionando perfeitamente.",
     icon: Shield
   }
 ];
@@ -67,7 +67,7 @@ export const FAQSection = () => {
             Perguntas Frequentes
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg">
-            Tire suas dúvidas sobre nossos serviços de desenvolvimento
+            Tire suas dúvidas sobre nossos serviços
           </p>
         </motion.div>
         
