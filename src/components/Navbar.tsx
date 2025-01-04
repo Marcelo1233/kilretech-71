@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Always start with dark mode
     document.documentElement.classList.add('dark');
     localStorage.setItem('theme', 'dark');
   }, []);
@@ -49,6 +50,9 @@ export const Navbar = () => {
           <button onClick={() => scrollToSection('portfolio')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
             Portfolio
           </button>
+          <button onClick={() => navigate('/faq')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
+            FAQ
+          </button>
           <button onClick={() => scrollToSection('contact')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
             Contato
           </button>
@@ -70,7 +74,7 @@ export const Navbar = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu */}
         <div className="md:hidden flex items-center gap-2">
           <Button
             variant="ghost"
@@ -104,6 +108,15 @@ export const Navbar = () => {
                 className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
               >
                 Portfolio
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/faq');
+                  setIsMenuOpen(false);
+                }}
+                className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
+              >
+                FAQ
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
