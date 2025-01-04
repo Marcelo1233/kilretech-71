@@ -44,7 +44,11 @@ export const TeamSection = () => {
             <Card key={index} className="hover:shadow-lg transition-shadow duration-300 animate-fade-up dark:bg-gray-800 dark:border-gray-700">
               <CardHeader className="text-center">
                 <Avatar className="w-24 h-24 mx-auto mb-4">
-                  <AvatarImage src={member.image} alt={member.name} />
+                  <AvatarImage 
+                    src={member.image} 
+                    alt={member.name} 
+                    className={member.name === "Marcelo Nascimento" ? "object-contain" : "object-cover"}
+                  />
                   <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                 </Avatar>
                 <CardTitle className="dark:text-white">{member.name}</CardTitle>
