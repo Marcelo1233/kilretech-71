@@ -61,6 +61,13 @@ const services = [
 ];
 
 export const ServicesSection = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="services" className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
@@ -90,6 +97,7 @@ export const ServicesSection = () => {
           <Button 
             size="lg"
             className="bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300"
+            onClick={() => scrollToSection('contact')}
           >
             Solicitar Orçamento
           </Button>
