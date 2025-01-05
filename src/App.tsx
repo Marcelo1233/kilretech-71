@@ -9,7 +9,6 @@ import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
-import "./i18n/config";
 
 const queryClient = new QueryClient();
 
