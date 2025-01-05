@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "title": "Transform Your Business with Digital Solutions",
+    "subtitle": "We develop technological solutions that drive your growth and highlight your company in the digital market.",
+    "startProject": "Start Project",
+    "seePortfolio": "See Portfolio",
+    "services": {
+      "mobileApps": "Mobile Apps",
+      "mobileDesc": "Exceptional mobile experiences",
+      "performance": "Performance",
+      "performanceDesc": "Speed and efficiency",
+      "webDev": "Web Development",
+      "webDevDesc": "Modern and responsive websites"
+    }
+  },
+  "nav": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "quote": "Request Quote"
+  }
+}

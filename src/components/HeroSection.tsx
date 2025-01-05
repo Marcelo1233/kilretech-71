@@ -2,10 +2,12 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ArrowRight, Code, Smartphone, Zap } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const HeroSection = () => {
   const { toast } = useToast();
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
 
   const handleServiceClick = (service: string) => {
     toast({
@@ -30,21 +32,18 @@ export const HeroSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 text-center md:text-left">
             <h1 className="text-3xl md:text-6xl font-bold leading-tight">
-              Transforme seu Negócio com{" "}
+              {t('hero.title')}{" "}
               <span className="bg-gradient-to-r from-primary via-accent to-purple-600 bg-clip-text text-transparent">
-                Soluções Digitais
+                {t('hero.subtitle')}
               </span>
             </h1>
-            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-xl">
-              Desenvolvemos soluções tecnológicas que impulsionam seu crescimento e destacam sua empresa no mercado digital.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button 
                 size={isMobile ? "default" : "lg"} 
                 className="group bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300"
                 onClick={() => scrollToSection('contact')}
               >
-                Iniciar Projeto
+                {t('hero.startProject')}
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
@@ -53,7 +52,7 @@ export const HeroSection = () => {
                 className="border-2 hover:bg-gray-50 dark:hover:bg-gray-800"
                 onClick={() => scrollToSection('portfolio')}
               >
-                Ver Portfolio
+                {t('hero.seePortfolio')}
               </Button>
             </div>
           </div>
@@ -61,40 +60,40 @@ export const HeroSection = () => {
           <div className="grid grid-cols-2 gap-4 md:gap-6">
             <div 
               className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-gray-100 dark:border-gray-700"
-              onClick={() => handleServiceClick("Apps Mobile")}
+              onClick={() => handleServiceClick(t('hero.services.mobileApps'))}
             >
               <div className="h-full flex flex-col items-center justify-center space-y-4">
                 <div className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg">
                   <Smartphone className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg">Apps Mobile</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Experiências móveis excepcionais</p>
+                <h3 className="font-semibold text-lg">{t('hero.services.mobileApps')}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{t('hero.services.mobileDesc')}</p>
               </div>
             </div>
 
             <div 
               className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-gray-100 dark:border-gray-700"
-              onClick={() => handleServiceClick("Performance Otimizada")}
+              onClick={() => handleServiceClick(t('hero.services.performance'))}
             >
               <div className="h-full flex flex-col items-center justify-center space-y-4">
                 <div className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg">
                   <Zap className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg">Performance</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Velocidade e eficiência</p>
+                <h3 className="font-semibold text-lg">{t('hero.services.performance')}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{t('hero.services.performanceDesc')}</p>
               </div>
             </div>
 
             <div 
               className="col-span-2 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-gray-100 dark:border-gray-700"
-              onClick={() => handleServiceClick("Desenvolvimento Web")}
+              onClick={() => handleServiceClick(t('hero.services.webDev'))}
             >
               <div className="h-full flex flex-col items-center justify-center space-y-4">
                 <div className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg">
                   <Code className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg">Desenvolvimento Web</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Websites modernos e responsivos</p>
+                <h3 className="font-semibold text-lg">{t('hero.services.webDev')}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{t('hero.services.webDevDesc')}</p>
               </div>
             </div>
           </div>

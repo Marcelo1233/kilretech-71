@@ -1,13 +1,21 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X, Moon, Sun, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     document.documentElement.classList.add('dark');
@@ -25,6 +33,10 @@ export const Navbar = () => {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
+  };
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -45,24 +57,46 @@ export const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           <button onClick={() => scrollToSection('services')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
-            Serviços
+            {t('nav.services')}
           </button>
           <button onClick={() => scrollToSection('portfolio')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
-            Portfolio
+            {t('nav.portfolio')}
           </button>
           <button onClick={() => navigate('/faq')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
-            FAQ
+            {t('nav.faq')}
           </button>
           <button onClick={() => scrollToSection('contact')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
-            Contato
+            {t('nav.contact')}
           </button>
           <Button 
             size="lg" 
             className="text-sm md:text-base"
             onClick={() => scrollToSection('contact')}
           >
-            Solicitar Orçamento
+            {t('nav.quote')}
           </Button>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="ml-2"
+                aria-label="Change language"
+              >
+                <Globe className="h-5 w-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => changeLanguage('pt')}>
+                Português
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => changeLanguage('en')}>
+                English
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <Button
             variant="ghost"
             size="icon"
@@ -76,6 +110,27 @@ export const Navbar = () => {
 
         {/* Mobile Menu */}
         <div className="md:hidden flex items-center gap-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="ml-2"
+                aria-label="Change language"
+              >
+                <Globe className="h-5 w-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => changeLanguage('pt')}>
+                Português
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => changeLanguage('en')}>
+                English
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <Button
             variant="ghost"
             size="icon"
@@ -101,13 +156,13 @@ export const Navbar = () => {
                 onClick={() => scrollToSection('services')}
                 className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
               >
-                Serviços
+                {t('nav.services')}
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
                 className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
               >
-                Portfolio
+                {t('nav.portfolio')}
               </button>
               <button 
                 onClick={() => {
@@ -116,19 +171,19 @@ export const Navbar = () => {
                 }}
                 className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
               >
-                FAQ
+                {t('nav.faq')}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
               >
-                Contato
+                {t('nav.contact')}
               </button>
               <Button 
                 className="w-full text-sm"
                 onClick={() => scrollToSection('contact')}
               >
-                Solicitar Orçamento
+                {t('nav.quote')}
               </Button>
             </div>
           </div>

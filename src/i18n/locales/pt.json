@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "title": "Transforme seu Negócio com Soluções Digitais",
+    "subtitle": "Desenvolvemos soluções tecnológicas que impulsionam seu crescimento e destacam sua empresa no mercado digital.",
+    "startProject": "Iniciar Projeto",
+    "seePortfolio": "Ver Portfolio",
+    "services": {
+      "mobileApps": "Apps Mobile",
+      "mobileDesc": "Experiências móveis excepcionais",
+      "performance": "Performance",
+      "performanceDesc": "Velocidade e eficiência",
+      "webDev": "Desenvolvimento Web",
+      "webDevDesc": "Websites modernos e responsivos"
+    }
+  },
+  "nav": {
+    "services": "Serviços",
+    "portfolio": "Portfolio",
+    "faq": "FAQ",
+    "contact": "Contato",
+    "quote": "Solicitar Orçamento"
+  }
+}
