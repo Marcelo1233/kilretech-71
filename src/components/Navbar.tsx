@@ -1,17 +1,13 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun, Globe } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 import { useNavigate } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useTranslation } from "react-i18next";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const navigate = useNavigate();
-  const { currentLanguage, toggleLanguage } = useLanguage();
-  const { t } = useTranslation();
 
   useEffect(() => {
     document.documentElement.classList.add('dark');
@@ -49,32 +45,23 @@ export const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           <button onClick={() => scrollToSection('services')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
-            {t('nav.services')}
+            Serviços
           </button>
           <button onClick={() => scrollToSection('portfolio')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
-            {t('nav.portfolio')}
+            Portfolio
           </button>
           <button onClick={() => navigate('/faq')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
-            {t('nav.faq')}
+            FAQ
           </button>
           <button onClick={() => scrollToSection('contact')} className="text-sm md:text-base hover:text-primary transition-colors dark:text-gray-200">
-            {t('nav.contact')}
+            Contato
           </button>
           <Button 
             size="lg" 
             className="text-sm md:text-base"
             onClick={() => scrollToSection('contact')}
           >
-            {t('nav.requestQuote')}
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleLanguage}
-            className="ml-2"
-            aria-label="Toggle language"
-          >
-            <Globe className="h-5 w-5" />
+            Solicitar Orçamento
           </Button>
           <Button
             variant="ghost"
@@ -89,14 +76,6 @@ export const Navbar = () => {
 
         {/* Mobile Menu */}
         <div className="md:hidden flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleLanguage}
-            aria-label="Toggle language"
-          >
-            <Globe className="h-5 w-5" />
-          </Button>
           <Button
             variant="ghost"
             size="icon"
@@ -122,13 +101,13 @@ export const Navbar = () => {
                 onClick={() => scrollToSection('services')}
                 className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
               >
-                {t('nav.services')}
+                Serviços
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
                 className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
               >
-                {t('nav.portfolio')}
+                Portfolio
               </button>
               <button 
                 onClick={() => {
@@ -137,19 +116,19 @@ export const Navbar = () => {
                 }}
                 className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
               >
-                {t('nav.faq')}
+                FAQ
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-sm hover:text-primary transition-colors py-2 dark:text-gray-200"
               >
-                {t('nav.contact')}
+                Contato
               </button>
               <Button 
                 className="w-full text-sm"
                 onClick={() => scrollToSection('contact')}
               >
-                {t('nav.requestQuote')}
+                Solicitar Orçamento
               </Button>
             </div>
           </div>
