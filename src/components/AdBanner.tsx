@@ -1,14 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const AdBanner = () => {
+  const [adError, setAdError] = useState<string | null>(null);
+
   useEffect(() => {
-    try {
-      // @ts-ignore
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (err) {
-      console.log('AdSense error:', err);
-    }
+    // Wait for the adsense script to load
+    const tryInitAd = () => {
+      try {
+        if (typeof window !== 'undefined' && window.adsbygoogle) {
+          // @ts-ignore
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+          console.log('AdSense initialized successfully');
+        } else {
+          console.log('Waiting for AdSense to load...');
+          setTimeout(tryInitAd, 1000); // Retry after 1 second
+        }
+      } catch (err) {
+        console.error('AdSense initialization error:', err);
+        setAdError('Failed to load advertisement');
+      }
+    };
+
+    tryInitAd();
   }, []);
+
+  if (adError) {
+    return null; // Don't show anything if there's an error
+  }
 
   return (
     <div className="w-full max-w-[200px] mx-auto px-1 py-0.5 bg-transparent">
