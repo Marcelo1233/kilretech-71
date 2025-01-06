@@ -40,7 +40,7 @@ export const TeamSection = () => {
           {team.map((member, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow duration-300 animate-fade-up dark:bg-gray-800 dark:border-gray-700">
               <CardHeader className="text-center">
-                <Avatar className="w-24 h-24 mx-auto mb-4 bg-primary/10">
+                <Avatar className="w-24 h-24 mx-auto mb-4 bg-primary/10 flex items-center justify-center">
                   <UserRound className="w-14 h-14 text-primary" />
                   <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                 </Avatar>
