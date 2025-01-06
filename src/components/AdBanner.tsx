@@ -8,7 +8,6 @@ export const AdBanner = () => {
     const tryInitAd = () => {
       try {
         if (typeof window !== 'undefined' && window.adsbygoogle) {
-          // @ts-ignore
           (window.adsbygoogle = window.adsbygoogle || []).push({});
           console.log('AdSense initialized successfully');
         } else {
