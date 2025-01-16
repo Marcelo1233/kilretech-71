@@ -7,7 +7,6 @@ import { TeamSection } from "@/components/TeamSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
-import { AdBanner } from "@/components/AdBanner";
 
 const Index = () => {
   return (
@@ -20,7 +19,6 @@ const Index = () => {
       <PortfolioSection />
       <TeamSection />
       <ContactSection />
-      <AdBanner />
       <Footer />
     </div>
   );
