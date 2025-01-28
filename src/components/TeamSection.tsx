@@ -1,30 +1,27 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { UserRound } from "lucide-react";
 
 export const TeamSection = () => {
   const team = [
     {
       name: "Marcelo Nascimento",
       role: "CEO e Líder de Projetos",
-      image: "/lovable-uploads/3dc9e622-9289-4fc1-a6bc-9a11122002e8.png",
       description: "Líder experiente com visão estratégica para desenvolvimento de soluções inovadoras."
     },
     {
       name: "João Paulo",
       role: "Vice-líder e Desenvolvedor",
-      image: "/lovable-uploads/7b8e7d8c-f151-474a-9cc2-81818c1ce6de.png",
       description: "Profissional com ampla experiência em desenvolvimento e gestão de equipes."
     },
     {
       name: "Luiz Guilherme",
       role: "Desenvolvedor",
-      image: "/lovable-uploads/60f9c7e9-53fb-44b3-9253-6c1f14d6fda2.png",
       description: "Desenvolvedor talentoso especializado em criar soluções eficientes."
     },
     {
       name: "Alef Ryan",
       role: "Desenvolvedor",
-      image: "/lovable-uploads/6e2f2c93-2dd3-4e66-8fd0-007bf232bd2a.png",
       description: "Desenvolvedor experiente com foco em qualidade e inovação, trazendo vasta experiência do mercado."
     }
   ];
@@ -43,8 +40,8 @@ export const TeamSection = () => {
           {team.map((member, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow duration-300 animate-fade-up dark:bg-gray-800 dark:border-gray-700">
               <CardHeader className="text-center">
-                <Avatar className="w-24 h-24 mx-auto mb-4">
-                  <AvatarImage src={member.image} alt={member.name} />
+                <Avatar className="w-24 h-24 mx-auto mb-4 bg-primary/10 flex items-center justify-center">
+                  <UserRound className="w-14 h-14 text-primary" />
                   <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                 </Avatar>
                 <CardTitle className="dark:text-white">{member.name}</CardTitle>
